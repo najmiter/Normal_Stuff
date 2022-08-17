@@ -1,4 +1,8 @@
 // by codeMite & Friends
+// This code finds the second maximum number from any range of numbers
+// WITHOUT USING ARRAYS!
+// IKR! IT'S HOT! (i hope)
+
 #include <iostream>
 int main(){
     int numbers, max, secMax;
