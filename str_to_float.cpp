@@ -1,3 +1,4 @@
+// Make your own stof(...) for practice!
 #include <iostream>
 #include <cstring>
 #include <cmath>
