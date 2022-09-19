@@ -3,7 +3,7 @@
 #include <cstring>
 #include <cmath>
 
-float strtoflo(std::string& other){
+float strtoflo(const std::string& other){
     uint16_t
         idx     = other.find('.'),
         size    = other.length();
