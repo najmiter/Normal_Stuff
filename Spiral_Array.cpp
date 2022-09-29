@@ -42,7 +42,7 @@ void Handler(int _spiral[][COLS])
             elems--;
         }
         // RIGHT
-        for (int i = ++top; i <= bottom; i++)
+        for (int i = top + 1; i <= bottom; i++)
         {
             std::cout<< _spiral[i][right] << ' ';
             elems--;
@@ -59,6 +59,7 @@ void Handler(int _spiral[][COLS])
             std::cout<< _spiral[i][top-1] << ' ';
             elems--;
         }
+        top++;
         bottom--;
     }
     std::cout<< "\n";
