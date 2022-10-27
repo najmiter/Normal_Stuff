@@ -1,0 +1,7 @@
+Ali Asif,Current Employee,23
+Huzaifa Liaqat,Current Employee,22
+Talha Hussain,Former Employee,20
+Adbul Mateen,Former Employee,17
+
+
+Code Mite,Never Employee,-1
