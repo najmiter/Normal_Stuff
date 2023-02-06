@@ -10,10 +10,10 @@ include irvine32.inc
 
 .code
 main proc
-	mov edi, key								; edi = key
-	mov esi, 0									; Boolean { true if found | false if NOT found (initially false) }
+	mov edi, key					; edi = key
+	mov esi, 0					; Boolean { true if found | false if NOT found (initially false) }
 	mov eax, ((lengthof sorted_array - 1) / 2)	; eax = middle
-	mov ebx, 0									; ebx = start
+	mov ebx, 0					; ebx = start
 	mov ecx, (lengthof sorted_array - 1)		; ecx = end
 
 	.while ebx <= ecx
