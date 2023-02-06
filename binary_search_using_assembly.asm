@@ -5,7 +5,7 @@ include irvine32.inc
 	found		db	"Data found", 10, 0
 	not_found	db	"Data NOT found", 10, 0
 
-	key			dd	5		; feel free to call the infamous USER to input for you
+	key		dd	5			; feel free to call the infamous USER to input for you
 	_two_		dd	2
 
 .code
