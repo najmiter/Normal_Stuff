@@ -69,7 +69,7 @@ int64_t back(vector *self)
 
 void shrink_to_fit(vector *self)
 {
-    if (!self->Size && self->Size == self->Capacity) return;
+    if (!self->Size || self->Size == self->Capacity) return;
     
     int64_t *pkr_mery_ko = (int64_t *)malloc(sizeof(int64_t) * self->Size); // because shrinking does that
     for (size_t i = 0; i < self->Size; i++)
