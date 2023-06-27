@@ -62,6 +62,10 @@
 #   ((counter++))
 # done
 
+################################
+# FUNCTIONS
+################################
+
 # function foo() {
 #   local number_of_args=$#
 #   local all_args=$*
