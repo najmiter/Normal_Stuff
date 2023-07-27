@@ -8,7 +8,7 @@ for (; counter < total_subjects * 2; counter++) {
   setTimeout(() => {
     thing.document.querySelectorAll('input')
     .forEach(each => {
-      if (each.value === '1' || each.value === '225')
+      if (each.value === '1' || each.value === '225') // could've just selected these with the css selectors but anyway 😁
         each.checked = true;
     })
     
