@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+// #include <algorithm> // std::reverse
 
 int main(/* int _t_args, char** _string */) {
   std::string string{ "let's reverse each word in this string" };
