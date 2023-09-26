@@ -8,10 +8,10 @@ section .data
     EXIT_SUCCESS equ 0
 
 section .text
+    global std__strlen          ; return the length of a string in RDX
     global std__cout            ; print a null terminated string to the console
     global std__to_string       ; convert an integer into a string pointed to by RSI
     global printa               ; print the value of RAX to the console
-    global std__strlen          ; return the length of a string in RDX
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;; MACROS ;;;;;;;;;;;;;;;;;;;;;;;;
