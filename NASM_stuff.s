@@ -26,6 +26,31 @@ section .text
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;; std::strlen ;;;;;;;;;;;;;;;;;;;;;;
+std__strlen:
+    ; ----------------------------------------------------------------------
+    ;    TAKES
+    ;        ||------> 1. RSI => The string
+    ;
+    ;    GIVES
+    ;        ||------> 1. RDX => The length of the string
+    ;
+    ; ----------------------------------------------------------------------
+
+    push rsi
+    xor rdx, rdx
+    strlen:
+        mov al, [rsi]
+        inc rdx
+        inc rsi
+
+        cmp al, 0
+        jne strlen
+
+    pop rsi
+    ret
+  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;; printf (std::cout) ;;;;;;;;;;;;;;;;;;;
 std__cout:
     ; ----------------------------------------------------------------------
@@ -39,23 +64,14 @@ std__cout:
     
     ; rsi is holding the pointer to the string
     ; Save rsi's value for later
-    push rsi
+    call std__strlen
 
     ; Find the length of the string (null terminated)
     ; rdx will hold the length
-    xor rdx, rdx
-    strlen:
-        mov al, [rsi]
-        inc rdx
-        inc rsi
-
-        cmp al, 0
-        jne strlen
-
+    
     ; Get ready to make a system call
     mov rax, 1
     mov rdi, 1
-    pop rsi
     syscall
 
     ret
