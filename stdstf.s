@@ -96,7 +96,6 @@ std__to_string:
     ;
     ; ----------------------------------------------------------------------
 
-section .text
     push rsi              ; Keep the output string pointer on the stack for later
     push rax              ; Keep the value of RAX on the stack because the next loop will change its value
 
