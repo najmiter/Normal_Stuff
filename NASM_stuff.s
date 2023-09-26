@@ -1,6 +1,6 @@
 section .bss
     number resb 20  ; required by the __to_string
-    _char resb 2    ; required by the printa
+    
 
 section .text
     global std__cout
@@ -107,6 +107,10 @@ std__to_string:
 ;;;;;;;;;;;;;;;;;;;;;;; print_RAX ;;;;;;;;;;;;;;;;;;;;;;;
 
 printa:
+section .bss 
+    _char resb 2
+
+section .text
 %macro writechr 1
     mov rax, 1
     mov rdi, 1
@@ -115,10 +119,7 @@ printa:
     syscall
 %endmacro
 
-    push rsi
     push rax      
-
-    mov rsi, _char
 
     mov rcx, 1            
     mov r10, 10           
@@ -142,9 +143,9 @@ printa:
         push rcx
 
         add al, '0'       
-        mov [rsi], al    
+        mov [_char], al    
 
-        writechr rsi
+        writechr _char
 
         pop rcx
         xor rdx, rdx      
@@ -157,13 +158,10 @@ printa:
         cmp rcx, 0        
         jg to_string      
 
-    mov byte [rsi], 10
-    writechr rsi
+    mov byte [_char], 10
+    writechr _char
     
-    pop rsi               
     ret
-
-
 
 
 
