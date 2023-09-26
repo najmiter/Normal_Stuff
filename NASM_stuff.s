@@ -1,3 +1,8 @@
+section .data
+    size_64t     equ 8
+    EXIT         equ 60
+    EXIT_SUCCESS equ 0
+
 section .text
     global std__cout            ; print a null terminated string to the console
     global std__to_string       ; convert an integer into a string
