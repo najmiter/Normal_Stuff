@@ -1,28 +1,11 @@
-section .data
-    string db "string is good", 10, 0
-
 section .bss
     number resb 20  ; required by the __to_string
     _char resb 2    ; required by the printa
 
 section .text
-    global _start
-    
     global std__cout
     global std__to_string
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-_start:
-    mov rax, 4321412412         
-    mov rsi, number
-    call std__to_string
-    
-    mov rax, 60
-    mov rdi, 0
-    syscall
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    global printa
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;; printf (std::cout) ;;;;;;;;;;;;;;;;;;;
