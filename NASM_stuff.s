@@ -119,6 +119,65 @@ std__to_string:
     ret
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;; print_RAX ;;;;;;;;;;;;;;;;;;;;;;;
+
+printa:
+%macro writechr 1
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, %1
+    mov rdx, 1
+    syscall
+%endmacro
+
+    push rsi
+    push rax      
+
+    mov rsi, _char
+
+    mov rcx, 1            
+    mov r10, 10           
+    get_divisor:
+        xor rdx, rdx
+        div r10           
+        
+        cmp rax, 0        
+        je _after         
+        imul rcx, 10      
+        jmp get_divisor   
+
+    _after:
+        pop rax           
+
+    to_string:
+        xor rdx, rdx
+        div rcx           
+        
+        push rdx      
+        push rcx
+
+        add al, '0'       
+        mov [rsi], al    
+
+        writechr rsi
+
+        pop rcx
+        xor rdx, rdx      
+        mov rax, rcx     
+        div r10
+        mov rcx, rax     
+
+        pop rax           
+        
+        cmp rcx, 0        
+        jg to_string      
+
+    mov byte [rsi], 10
+    writechr rsi
+    
+    pop rsi               
+    ret
 
 
 
