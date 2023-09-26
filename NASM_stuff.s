@@ -6,13 +6,16 @@ section .bss
 
 section .text
     global _start
+    
+    global std__cout
+    global std__to_string
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 _start:
     mov rax, 4321412412         
     mov rsi, number
-    call __to_string
+    call std__to_string
     
     mov rax, 60
     mov rdi, 0
@@ -58,7 +61,7 @@ std__cout:
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;; to_string ;;;;;;;;;;;;;;;;;;;;;;;
-__to_string:
+std__to_string:
     ; ----------------------------------------------------------------------
     ;    TAKES
     ;        ||------> 1. RAX => Number
