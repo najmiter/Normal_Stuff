@@ -2,7 +2,8 @@ section .data
     string db "string is good", 10, 0
 
 section .bss
-    number resb 20 ; required by the __to_string
+    number resb 20  ; required by the __to_string
+    _char resb 2    ; required by the printa
 
 section .text
     global _start
