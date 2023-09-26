@@ -1,3 +1,5 @@
+;;; Developed by Najam (@najmiter)
+
 section .data
     size_64t     equ 8
     EXIT         equ 60
