@@ -1,11 +1,7 @@
-section .bss
-    number resb 20  ; required by the __to_string
-    
-
 section .text
-    global std__cout
-    global std__to_string
-    global printa
+    global std__cout            ; print a null terminated string to the console
+    global std__to_string       ; convert an integer into a string
+    global printa               ; print the value of RAX to the console
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;; printf (std::cout) ;;;;;;;;;;;;;;;;;;;
@@ -57,6 +53,10 @@ std__to_string:
     ;
     ; ----------------------------------------------------------------------
 
+section .bss
+    number resb 20 
+
+section .text
     push rsi              ; Keep the output string pointer on the stack for later
     push rax              ; Keep the value of RAX on the stack because the next loop will change its value
 
