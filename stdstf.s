@@ -1,4 +1,6 @@
 ;;; Developed by Najam (@najmiter)
+;;;;; FREE TO USE ANYWHERE (if it's worth it ofc :D)
+;;;;;;; A small credit in the corner would be appreciated though :D
 
 section .data
     size_64t     equ 8
