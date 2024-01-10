@@ -1,6 +1,6 @@
 // coded by the people for the people
 
-const thing = document.getElementById('resourceobject').contentWindow;
+const thing = document.getElementById('resourceobject')?.contentWindow;
 if (thing) {
   let counter = 0;
   const total_subjects = 6; // Change to your number of subjects
