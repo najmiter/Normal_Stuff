@@ -21,7 +21,7 @@ if (thing) {
     document.getElementById('actionmenuaction-6').click()
   }, counter * delay);
 } else {
-  console.log(`Please make sure that:
+  console.error(`Please make sure that:
     1. You're logged into your LMS.
     2. Responsive Mode is turned off.`);
 }
